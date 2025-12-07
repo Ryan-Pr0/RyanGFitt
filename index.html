@@ -53,11 +53,45 @@
     }
 
     /* ---------------------- ANIMATIONS ---------------------- */
-    @keyframes slideInUp { from{opacity:0;transform:translateY(40px);} to{opacity:1;transform:translateY(0);} }
-    @keyframes slideInLeft { from{opacity:0;transform:translateX(-40px);} to{opacity:1;transform:translateX(0);} }
-    @keyframes slideInRight { from{opacity:0;transform:translateX(40px);} to{opacity:1;transform:translateX(0);} }
 
-    .anim-up, .anim-left, .anim-right { opacity:0; }
+    /* Fade upward */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1s ease forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Fade from left */
+    .fade-left {
+      opacity: 0;
+      transform: translateX(-30px);
+      animation: fadeLeft 1s ease forwards;
+    }
+    @keyframes fadeLeft {
+      from { opacity: 0; transform: translateX(-30px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+
+    /* Fade from right */
+    .fade-right {
+      opacity: 0;
+      transform: translateX(30px);
+      animation: fadeRight 1s ease forwards;
+    }
+    @keyframes fadeRight {
+      from { opacity: 0; transform: translateX(30px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+
+    /* Delays */
+    .fade-delay-1 { animation-delay: 0.2s; }
+    .fade-delay-2 { animation-delay: 0.4s; }
+    .fade-delay-3 { animation-delay: 0.6s; }
+    .fade-delay-4 { animation-delay: 0.8s; }
 
     /* ---------------------- NAVBAR ---------------------- */
     .navbar{
@@ -101,7 +135,6 @@
       line-height:1.5;
     }
 
-    /* Mobile hero text */
     @media(max-width:480px){
       .hero h1{font-size:30px;}
       .hero p{font-size:15px;}
@@ -124,7 +157,6 @@
     /* ---------------------- PARALLAX ---------------------- */
     .parallax{
       min-height:300px;
-      
       background-size:cover;
       background-position:center;
       background-attachment:fixed;
@@ -138,11 +170,8 @@
       background:rgba(0,0,0,0.55);
     }
 
-    /* Mobile parallax fallback (iOS) */
     @media(max-width:768px){
-      .parallax{
-        background-attachment:scroll;
-      }
+      .parallax{background-attachment:scroll;}
     }
 
     /* ---------------------- SECTION ---------------------- */
@@ -216,7 +245,7 @@
 
 <div class="particles" id="particles"></div>
 
-<header class="navbar">
+<header class="navbar fade-in fade-delay-1">
   <div class="brand">
     <div class="logo-circle">
       <img src="Photo 3.png" alt="strong" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
@@ -226,53 +255,63 @@
 </header>
 
 <main class="hero">
-  <div class="hero-inner anim-up">
-    <h1>Elite Transformation — Streamlined</h1>
-    <p>A premium fitness system engineered for aesthetics, strength, and sustainable results.</p>
-    <button class="btn-primary" onclick="window.location.href='YOUR_PAYHIP_LINK_HERE'">Get the Program</button>
+  <div class="hero-inner">
+    <h1 class="fade-in fade-delay-1">Elite Transformation — Streamlined</h1>
+    <p class="fade-in fade-delay-2">A premium fitness system engineered for aesthetics, strength, and sustainable results.</p>
+    <button class="btn-primary fade-in fade-delay-3">Get the Program</button>
   </div>
 </main>
 
-<div class="parallax"></div>
+<div class="parallax fade-in"></div>
 
-<section class="section anim-up">
+<section class="section fade-in">
   <h2 style="color:var(--gold)">What You Get</h2>
 
   <div class="grid">
-    <div class="card anim-left"><h3>Structured Workouts</h3><p>Targeted daily progressions designed for strength & symmetry.</p></div>
-    <div class="card anim-up"><h3>HD Video Library</h3><p>Crystal-clear tutorials with proper form breakdowns.</p></div>
-    <div class="card anim-right"><h3>Nutrition Blueprint</h3><p>Macros, meals, and a guided shopping list.</p></div>
-    <div class="card anim-left"><h3>Warmups & Recovery</h3><p>Mobility flows and cooldowns for injury-free training.</p></div>
-    <div class="card anim-up"><h3>Supplement Guide</h3><p>Evidence-based recommendations only.</p></div>
-    <div class="card anim-right"><h3>Offline PDF</h3><p>Access your full program anywhere.</p></div>
+    <div class="card fade-left fade-delay-1"><h3>Structured Workouts</h3><p>Targeted daily progressions designed for strength & symmetry.</p></div>
+    <div class="card fade-in fade-delay-2"><h3>HD Video Library</h3><p>Crystal-clear tutorials with proper form breakdowns.</p></div>
+    <div class="card fade-right fade-delay-3"><h3>Nutrition Blueprint</h3><p>Macros, meals, and a guided shopping list.</p></div>
+
+    <div class="card fade-left fade-delay-1"><h3>Warmups & Recovery</h3><p>Mobility flows and cooldowns for injury-free training.</p></div>
+    <div class="card fade-in fade-delay-2"><h3>Supplement Guide</h3><p>Evidence-based recommendations only.</p></div>
+    <div class="card fade-right fade-delay-3"><h3>Offline PDF</h3><p>Access your full program anywhere.</p></div>
   </div>
 
-  <div class="stats anim-up">
-    <div class="stat-box"><div class="stat-num">40+</div><div class="stat-label">Exercises</div></div>
-    <div class="stat-box"><div class="stat-num">12 Weeks</div><div class="stat-label">Structured Roadmap</div></div>
-    <div class="stat-box"><div class="stat-num">HD</div><div class="stat-label">Video Tutorials</div></div>
+  <div class="stats">
+    <div class="stat-box fade-in fade-delay-1"><div class="stat-num">40+</div><div class="stat-label">Exercises</div></div>
+    <div class="stat-box fade-in fade-delay-2"><div class="stat-num">12 Weeks</div><div class="stat-label">Structured Roadmap</div></div>
+    <div class="stat-box fade-in fade-delay-3"><div class="stat-num">HD</div><div class="stat-label">Video Tutorials</div></div>
   </div>
 </section>
 
-<section class="section anim-up">
+<section class="section fade-in">
   <h2 style="color:var(--gold)">Frequently Asked Questions</h2>
-  <div class="faq-item"><details><summary>Do I need equipment?</summary><p>No — optional dumbbell variations included.</p></details></div>
-  <div class="faq-item"><details><summary>Is this beginner-friendly?</summary><p>Yes — adaptable to all fitness levels.</p></details></div>
-  <div class="faq-item"><details><summary>Do I get lifetime access?</summary><p>You can re-download the PDF anytime.</p></details></div>
+
+  <div class="faq-item fade-in fade-delay-1"><details><summary>Do I need equipment?</summary><p>No — optional dumbbell variations included.</p></details></div>
+  <div class="faq-item fade-in fade-delay-2"><details><summary>Is this beginner-friendly?</summary><p>Yes — adaptable to all fitness levels.</p></details></div>
+  <div class="faq-item fade-in fade-delay-3"><details><summary>Do I get lifetime access?</summary><p>You can re-download the PDF anytime.</p></details></div>
 </section>
 
-<footer>© 2025 RyanGFitt — All Rights Reserved</footer>
+<footer class="fade-in fade-delay-3">© 2025 RyanGFitt — All Rights Reserved</footer>
 
 <script>
-  // Scroll Reveal
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){ entry.target.style.opacity = 1; }
-    })
-  }, {threshold:0.15});
-  document.querySelectorAll('.anim-up, .anim-left, .anim-right').forEach(el => observer.observe(el));
+  /* SCROLL-TRIGGERED FADE ANIMATIONS */
+  const animatedEls = document.querySelectorAll(".fade-in, .fade-left, .fade-right");
 
-  // Gold Particles
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animationPlayState = "running";
+      }
+    });
+  }, { threshold: 0.2 });
+
+  animatedEls.forEach(el => {
+    el.style.animationPlayState = "paused";
+    observer.observe(el);
+  });
+
+  /* GOLD PARTICLES */
   const particleContainer = document.getElementById('particles');
   for(let i=0;i<45;i++){
     let p = document.createElement('div');
