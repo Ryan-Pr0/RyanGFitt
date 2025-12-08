@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RyanGFitt — Luxury Fitness Program</title>
+  <title>RyanGFitt — Fitness Program</title>
 
   <style>
     /* ---------------------- GLOBAL STYLE ---------------------- */
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+    @import url('link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"');
 
     :root {
       --gold: #d4af37;
@@ -26,7 +26,6 @@
     body {
       margin: 0;
       background: linear-gradient(180deg,#050505,#0c0c0c);
-      font-family: 'Montserrat', sans-serif;
       color: var(--white);
       overflow-x: hidden;
     }
@@ -174,6 +173,57 @@
       .parallax{background-attachment:scroll;}
     }
 
+    .parallax-content {
+  position: relative;
+  top: 0;
+  left: 0;
+  transform: none;
+  text-align: center;
+  width: 90%;
+  max-width: 600px;
+  color: var(--white);
+  animation: fadeIn 1.7s ease forwards;
+}
+
+.parallax-content h2 {
+  font-size: 32px;
+  color: var(--gold);
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  text-shadow: 0 0 14px rgba(212,175,55,0.45);
+}
+
+.parallax-content p {
+  font-size: 16px;
+  color: var(--muted);
+}
+
+
+.parallax-inner {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.parallax-img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  box-shadow: 0 0 30px rgba(212,175,55,0.4);
+  margin-bottom: 25px;
+  animation: fadeIn 1.4s ease forwards;
+}
+
+
     /* ---------------------- SECTION ---------------------- */
     .section{
       padding:60px 20px;
@@ -218,7 +268,9 @@
       min-width:200px;text-align:center;
       transition:0.3s;
     }
-    .stat-box:hover{transform:translateY(-6px);}
+    .stat-box:hover{transform:translateY(-10px) scale(1.03);
+      border:1px solid var(--gold);
+      box-shadow:0 14px 40px rgba(212,175,55,0.2);}
     .stat-num{font-size:28px;color:var(--gold-light);font-weight:700}
     .stat-label{color:var(--muted);margin-top:6px;font-size:14px}
 
@@ -239,6 +291,18 @@
 
     footer{text-align:center;padding:28px;color:var(--muted);margin-top:50px;font-size:14px}
 
+    body, p, button, summary, h1, h2, h3 {
+      font-family: 'Outfit', sans-serif;
+      letter-spacing: 0.5px;
+      font-weight: 800;
+      text-shadow:0 0 12px rgba(212,175,55,0.45)
+    }
+
+     
+
+
+
+
   </style>
 </head>
 <body>
@@ -248,7 +312,7 @@
 <header class="navbar fade-in fade-delay-1">
   <div class="brand">
     <div class="logo-circle">
-      <img src="Photo 3.png" alt="strong" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+      <img src="RGF.png" alt="strong" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
     </div>
     <h2>RyanGFitt</h2>
   </div>
@@ -262,10 +326,21 @@
   </div>
 </main>
 
-<div class="parallax fade-in"></div>
+<div class="parallax fade-in">
+  <div class="parallax-inner">
+    <img src="RGF.png" class="parallax-img" alt="Luxury Badge">
+
+    <div class="parallax-content">
+      <h2>“Discipline Creates Aesthetic.”</h2>
+      <p>Your transformation begins the moment you decide not to quit.</p>
+    </div>
+  </div>
+</div>
+
+
 
 <section class="section fade-in">
-  <h2 style="color:var(--gold)">What You Get</h2>
+  <h2 style="color:var(--gold)">What You Get🔌</h2>
 
   <div class="grid">
     <div class="card fade-left fade-delay-1"><h3>Structured Workouts</h3><p>Targeted daily progressions designed for strength & symmetry.</p></div>
@@ -275,6 +350,7 @@
     <div class="card fade-left fade-delay-1"><h3>Warmups & Recovery</h3><p>Mobility flows and cooldowns for injury-free training.</p></div>
     <div class="card fade-in fade-delay-2"><h3>Supplement Guide</h3><p>Evidence-based recommendations only.</p></div>
     <div class="card fade-right fade-delay-3"><h3>Offline PDF</h3><p>Access your full program anywhere.</p></div>
+    <div class="card fade-right fade-delay-4"><h3>Pro Tips</h3><p>Tips that can help fast-track your fitness journey.</p></div>
   </div>
 
   <div class="stats">
@@ -285,7 +361,7 @@
 </section>
 
 <section class="section fade-in">
-  <h2 style="color:var(--gold)">Frequently Asked Questions</h2>
+  <h2 style="color:var(--gold)">Frequently Asked Questions💡</h2>
 
   <div class="faq-item fade-in fade-delay-1"><details><summary>Do I need equipment?</summary><p>No — optional dumbbell variations included.</p></details></div>
   <div class="faq-item fade-in fade-delay-2"><details><summary>Is this beginner-friendly?</summary><p>Yes — adaptable to all fitness levels.</p></details></div>
@@ -326,5 +402,3 @@
 
 </body>
 </html>
-
-
